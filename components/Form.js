@@ -14,9 +14,14 @@ export const Form = ({ onSubmit }) => {
   useEffect(() => {
     if (puertoRico) {
       setTimeout(() => {
-        const newWindow = window.open("https://forms.gle/LiSgpzmjRuXkVNhe6", 'PuertoRico', 'noopener,noreferrer')
-        if (newWindow) newWindow.opener = null
-        window.open("");
+        const link = document.createElement("a");
+        link.id = 'link-to-form';
+        link.href = 'https://forms.gle/LiSgpzmjRuXkVNhe6';
+        document.getElementsByTagName('body')[0].appendChild(link);
+        document.getElementById('link-to-form').click();
+        // const newWindow = window.open("", 'PuertoRico', 'noopener,noreferrer')
+        // if (newWindow) newWindow.opener = null
+        // window.open("");
       }, 6000);
     }
   }, [puertoRico])
