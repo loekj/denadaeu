@@ -19,6 +19,9 @@ export class Home extends Component {
       document.getElementById("z2").style.zIndex = "0";
       document.getElementById("z3").style.zIndex = "0";
       this.showModal()
+    } else {
+      document.getElementById("errado").classList.remove("invisible")
+      document.getElementById("errado").classList.add("visible")
     }
   }
 
@@ -48,7 +51,7 @@ export class Home extends Component {
     document.querySelector('html').classList.toggle('scroll-lock');
   };
   render() {return (
-    <div>
+    <div id='main-page'>
       <Head>
         <title>De Nada Eu</title>
         <meta name="description" content="De Nada Eu Travel Gear" />
@@ -63,8 +66,10 @@ export class Home extends Component {
           <img className='h-44' src="/assets/images/Logos/DeNadaEu_Transparent.png" alt="" />
           <br />
           <div style={{textAlign: "left"}}>
-            <h1 className='text-8xl font-extrabold font-shojumaru text-center text-black'>onde tu fores</h1>
-            <h1 className='text-8xl font-extrabold font-shojumaru text-center text-black margin-bottom:0'>irmos contigo</h1>
+            <br />
+            <h1 className='-translate-x-24 text-7xl font-extrabold font-shojumaru text-center text-white'>ONDE TU FORES</h1>
+            <br />
+            <h1 className='translate-x-32 text-7xl font-extrabold font-shojumaru text-center text-white margin-bottom:0'>IREMOS CONTIGO</h1>
           </div>
           <img className='absolute top-10 -left-4 w-1/4' src="/assets/images/Funny/whats_this.png" alt=""  data-aos-duration="5000" data-aos-once="false" data-aos-easing="easing" data-aos="slide-left" />
           {/* <img className='absolute bottom-32 -right-0 w-1/6 hover:-translate-x-20 duration-2500' src="/assets/images/Funny/image-1.png" alt="" /> */}
@@ -307,6 +312,7 @@ export class Home extends Component {
               <p id="z3" className="z-50">
                 Reivindique seu acesso VIP aqui
               </p>
+              <span id='errado' className="invisible text-base text-red-600 italic" >Código errado, amigo! Tenta mais uma vez...</span>
               <input id="z1" type="text" className='z-50 w-2/5 mx-auto rounded-full px-4 py-2 text-base text-green-dark placeholder-green-dark placeholder-opacity-70 border border-green-dark border-opacity-50' placeholder='teu código aqui...' />
               <input id="z2" type="submit" value="REIVINDICAR COISAS" className="z-50 text-4xl cursor-pointer btn mx-auto space-x-5 bg-green-dark hover:border-green-dark hover:text-green-dark" data-aos-duration="1500" data-aos-once="false" data-aos="fade-up">
                     {/* <span className='font-montserrat text-4xl uppercase'></span> */}

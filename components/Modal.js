@@ -11,7 +11,7 @@ export const Modal = ({
   onSubmit
 }) => {
   return ReactDOM.createPortal(
-    <FocusTrap>
+    // <FocusTrap>
       <aside
         tag="aside"
         role="dialog"
@@ -40,8 +40,7 @@ export const Modal = ({
             <Form onSubmit={onSubmit} />
           </div>
         </div>
-      </aside>
-    </FocusTrap>,
+      </aside>,
     document.body
   );
 };
