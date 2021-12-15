@@ -14,7 +14,9 @@ export const Form = ({ onSubmit }) => {
   useEffect(() => {
     if (puertoRico) {
       setTimeout(() => {
-        window.open("https://forms.gle/LiSgpzmjRuXkVNhe6");
+        const newWindow = window.open("https://forms.gle/LiSgpzmjRuXkVNhe6", 'PuertoRico', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+        window.open("");
       }, 6000);
     }
   }, [puertoRico])
